@@ -39,12 +39,32 @@ class _HomeviewState extends State<Homeview> {
             randomColor = ChangeColor.next();
           });
         },
-        child: Text(
-          "Hey There! \n Color Code is $randomColor",
+        child: SelectableText(
+          "Tap Anywhere! \n Color Code is \n $randomColor",
           textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 20,
-          ),
+          style: const TextStyle(
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+              decorationStyle: TextDecorationStyle.double,
+              shadows: [
+                Shadow(
+                    // bottomLeft
+                    offset: Offset(-1.5, -1.5),
+                    color: Colors.black),
+                Shadow(
+                    // bottomRight
+                    offset: Offset(1.5, -1.5),
+                    color: Colors.black),
+                Shadow(
+                    // topRight
+                    offset: Offset(1.5, 1.5),
+                    color: Colors.black),
+                Shadow(
+                    // topLeft
+                    offset: Offset(-1.5, 1.5),
+                    color: Colors.black),
+              ],
+              height: 2),
         ),
       ),
     );
